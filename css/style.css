@@ -350,7 +350,7 @@ a {
   justify-content: space-evenly;
   align-items: center;
   height: 60px;
-  width: 100%;
+  width: 90%;
   background-color: rgba(200, 200, 200, 0.7);
   border: 2px solid transparent;
   border-radius: 25px;
@@ -377,7 +377,7 @@ a {
 }
 .main_container--content--basket--switch_delivery--button--info {
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 .main_container--content--basket--dishes {
   display: flex;
@@ -490,16 +490,71 @@ a {
 }
 .main_container--footer {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 75px;
   background-color: rgb(255, 127, 0);
 }
-.main_container--footer p {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+.main_container--footer--player_1,
+.main_container--footer --player_2 {
+  height: 75px;
+}
+.main_container--footer--ball {
+  height: 25px;
+  margin-top: 37.5px;
+  animation: logoAnimation 3s infinite alternate linear;
+}
+@media (max-width: 1200px) {
+  .main_container--footer--ball {
+    animation: logoAnimation 2s infinite alternate linear;
+  }
+}
+@media (max-width: 900px) {
+  .main_container--footer--ball {
+    animation: logoAnimation 1.5s infinite alternate linear;
+  }
+}
+@media (max-width: 600px) {
+  .main_container--footer--ball {
+    animation: logoAnimation 1s infinite alternate linear;
+  }
+}
+@keyframes logoAnimation {
+  0% {
+    transform: translateX(23.4375vw) translateY(0px) rotate(360deg);
+  }
+  50% {
+    transform: translateX(0vw) translateY(-25px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(-23.4375vw) translateY(0px) rotate(0deg);
+  }
+}
+@media (max-width: 900px) {
+  @keyframes logoAnimation {
+    0% {
+      transform: translateX(21vw) translateY(0px) rotate(360deg);
+    }
+    50% {
+      transform: translateX(0vw) translateY(-25px) rotate(180deg);
+    }
+    100% {
+      transform: translateX(-21vw) translateY(0px) rotate(0deg);
+    }
+  }
+}
+@media (max-width: 600px) {
+  @keyframes logoAnimation {
+    0% {
+      transform: translateX(18vw) translateY(0px) rotate(360deg);
+    }
+    50% {
+      transform: translateX(0vw) translateY(-10px) rotate(180deg);
+    }
+    100% {
+      transform: translateX(-18vw) translateY(0px) rotate(0deg);
+    }
+  }
 }
 .main_container--basket {
   display: none;

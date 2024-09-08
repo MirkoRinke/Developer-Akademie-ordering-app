@@ -51,7 +51,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 60px;
-    width: 100%;
+    width: 90%;
     background-color: $thirdColor;
     border: 2px solid transparent;
     border-radius: 25px;
@@ -81,7 +81,7 @@
 
       &--info {
         font-weight: bold;
-        text-align: left;
+        text-align: center;
       }
     }
   }

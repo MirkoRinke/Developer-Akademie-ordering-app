@@ -138,7 +138,9 @@ function getDishesTemplate(index, dishesArray, dishType) {
 
 function renderFooterTemplate() {
   return /*html*/ `
-    <p>Hier könnte ihre Werbung stehen</p>
+    <img class="main_container--footer--player_1" src="./assets/img/player_1.png" alt="">
+    <img class="main_container--footer--ball" src="./assets/img/ball.png" alt="">
+    <img class="main_container--footer--player_1" src="./assets/img/player_2.png" alt="">
   `;
 }
 
