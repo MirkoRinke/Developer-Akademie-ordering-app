@@ -502,24 +502,24 @@ a {
 .main_container--footer--ball {
   height: 25px;
   margin-top: 37.5px;
-  animation: logoAnimation 3s infinite alternate linear;
+  animation: footerAnimation 3s infinite alternate linear;
 }
 @media (max-width: 1200px) {
   .main_container--footer--ball {
-    animation: logoAnimation 2s infinite alternate linear;
+    animation: footerAnimation 2s infinite alternate linear;
   }
 }
 @media (max-width: 900px) {
   .main_container--footer--ball {
-    animation: logoAnimation 1.5s infinite alternate linear;
+    animation: footerAnimation 1.5s infinite alternate linear;
   }
 }
 @media (max-width: 600px) {
   .main_container--footer--ball {
-    animation: logoAnimation 1s infinite alternate linear;
+    animation: footerAnimation 1s infinite alternate linear;
   }
 }
-@keyframes logoAnimation {
+@keyframes footerAnimation {
   0% {
     transform: translateX(23.4375vw) translateY(0px) rotate(360deg);
   }
@@ -531,7 +531,7 @@ a {
   }
 }
 @media (max-width: 900px) {
-  @keyframes logoAnimation {
+  @keyframes footerAnimation {
     0% {
       transform: translateX(21vw) translateY(0px) rotate(360deg);
     }
@@ -544,7 +544,7 @@ a {
   }
 }
 @media (max-width: 600px) {
-  @keyframes logoAnimation {
+  @keyframes footerAnimation {
     0% {
       transform: translateX(18vw) translateY(0px) rotate(360deg);
     }

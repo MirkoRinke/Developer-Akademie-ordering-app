@@ -14,21 +14,21 @@
     height: calc($footerHeight / 3);
     margin-top: calc($footerHeight / 2);
 
-    animation: logoAnimation 3s infinite alternate linear;
+    animation: footerAnimation 3s infinite alternate linear;
 
     @media (max-width: $breakpoint-lg) {
-      animation: logoAnimation 2s infinite alternate linear;
+      animation: footerAnimation 2s infinite alternate linear;
     }
 
     @media (max-width: $breakpoint-md) {
-      animation: logoAnimation 1.5s infinite alternate linear;
+      animation: footerAnimation 1.5s infinite alternate linear;
     }
 
     @media (max-width: $breakpoint-sm) {
-      animation: logoAnimation 1s infinite alternate linear;
+      animation: footerAnimation 1s infinite alternate linear;
     }
 
-    @keyframes logoAnimation {
+    @keyframes footerAnimation {
       0% {
         transform: translateX(23.4375vw) translateY(0px) rotate(360deg);
       }
@@ -41,7 +41,7 @@
     }
 
     @media (max-width: $breakpoint-md) {
-      @keyframes logoAnimation {
+      @keyframes footerAnimation {
         0% {
           transform: translateX(21vw) translateY(0px) rotate(360deg);
         }
@@ -55,7 +55,7 @@
     }
 
     @media (max-width: $breakpoint-sm) {
-      @keyframes logoAnimation {
+      @keyframes footerAnimation {
         0% {
           transform: translateX(18vw) translateY(0px) rotate(360deg);
         }
