@@ -174,6 +174,7 @@ function triggerOrder() {
   updateBasketContents();
   renderBasketButton();
   hideBasketButton();
+  fixedScroll();
 }
 
 function useEasterEgg() {
