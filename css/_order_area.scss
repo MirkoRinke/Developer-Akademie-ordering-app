@@ -83,8 +83,7 @@
     height: min-content;
     padding-inline: 25px;
     margin-block: 10px;
-    background-color: $secondColor;
-
+    background-color: $mainColor;
     white-space: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
@@ -112,7 +111,8 @@
         display: inline-block;
         font-size: 14px;
         text-decoration: none;
-        color: black;
+
+        color: white;
         font-weight: bold;
         padding: 5px 15px;
         border: 2px solid transparent;
@@ -120,7 +120,7 @@
         transition: background-color 300ms ease-in-out;
 
         &:hover {
-          background-color: $thirdColor;
+          color: black;
           transition: background-color 300ms ease-in-out;
         }
       }
@@ -194,5 +194,19 @@
         }
       }
     }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - $basketWidth);
+  z-index: 1000;
+  margin: 0px;
+  background-color: $mainColor;
+
+  @media (max-width: $breakpoint-md) {
+    width: 100%;
   }
 }

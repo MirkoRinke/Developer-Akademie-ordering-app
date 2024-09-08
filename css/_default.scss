@@ -38,22 +38,6 @@
   bottom: calc($footerHeight + 10px) !important;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: calc(100% - $basketWidth);
-  z-index: 1000;
-  margin: 0px !important;
-
-  border: 2px solid $mainColor;
-  border-radius: 0px 0px 10px 10px;
-
-  @media (max-width: $breakpoint-md) {
-    width: 100%;
-  }
-}
-
 svg {
   user-select: none;
 }

@@ -313,7 +313,7 @@ updateWidth();
 window.addEventListener("scroll", function () {
   const stickyTrigger = document.getElementById("dishes0");
   const menu = document.getElementById("main_container--content--order_area--nav");
-  const menuOffset = stickyTrigger.offsetTop - 200; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
+  const menuOffset = stickyTrigger.offsetTop - 170; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
   if (window.scrollY > menuOffset) {
     // https://www.w3schools.com/jsref/prop_win_scrolly.asp
     menu.classList.add("sticky");
