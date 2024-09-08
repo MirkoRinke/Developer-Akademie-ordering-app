@@ -49,6 +49,10 @@
   bottom: 85px !important;
 }
 
+.fixed-basket {
+  height: calc(100vh - 75px) !important;
+}
+
 svg {
   -webkit-user-select: none;
      -moz-user-select: none;

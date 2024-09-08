@@ -232,8 +232,8 @@ function toggleBasket() {
   orderArea.classList.toggle("d_none");
   basketButton.classList.toggle("d_none");
   basketClose.classList.toggle("d_block");
-
   if (!baskedOpen) renderBasketButton();
+  dishesSticky();
 }
 
 function hideBasketButton() {
@@ -244,14 +244,17 @@ function hideBasketButton() {
 function fixedScroll() {
   let basketElement = document.getElementById("basketButton");
   let basketImg = document.getElementById("main_container--content--basket--order_info--img");
+  let basket = document.getElementById("basket");
   let scrollPosition = window.innerHeight + window.scrollY;
   let documentHeight = document.documentElement.scrollHeight;
-  if (scrollPosition >= documentHeight - 10) {
+  if (scrollPosition >= documentHeight - 75) {
     if (basketElement !== null) basketElement.classList.add("fixed-bottom");
     if (basketImg !== null) basketImg.classList.add("fixed-bottom");
+    if (basket !== null && !baskedOpen) basket.classList.add("fixed-basket");
   } else {
     if (basketElement !== null) basketElement.classList.remove("fixed-bottom");
     if (basketImg !== null) basketImg.classList.remove("fixed-bottom");
+    if (basket !== null && !baskedOpen) basket.classList.remove("fixed-basket");
   }
 }
 
@@ -304,13 +307,14 @@ function updateWidth() {
   const width = window.innerWidth; // https://www.w3schools.com/jsref/prop_win_innerwidth.asp
   if (width >= 900 && baskedOpen == true) {
     toggleBasket();
+    dishesSticky();
   }
 }
 window.addEventListener("resize", updateWidth); // https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event
 
 updateWidth();
 
-window.addEventListener("scroll", function () {
+function dishesSticky() {
   const stickyTrigger = document.getElementById("dishes0");
   const menu = document.getElementById("main_container--content--order_area--nav");
   const menuOffset = stickyTrigger.offsetTop - 170; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
@@ -320,4 +324,8 @@ window.addEventListener("scroll", function () {
   } else {
     menu.classList.remove("sticky");
   }
+}
+
+window.addEventListener("scroll", function () {
+  dishesSticky();
 });

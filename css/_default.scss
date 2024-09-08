@@ -38,6 +38,10 @@
   bottom: calc($footerHeight + 10px) !important;
 }
 
+.fixed-basket {
+  height: calc(100vh - $footerHeight) !important;
+}
+
 svg {
   user-select: none;
 }
