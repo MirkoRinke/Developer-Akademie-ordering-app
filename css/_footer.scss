@@ -7,7 +7,7 @@
 
   &--player_1,
   --player_2 {
-    height: calc($footerHeight);
+    height: calc($footerHeight - 5px);
   }
 
   &--ball {
@@ -30,13 +30,13 @@
 
     @keyframes footerAnimation {
       0% {
-        transform: translateX(23.4375vw) translateY(0px) rotate(360deg);
+        transform: translateX(23.5vw) translateY(0px) rotate(360deg);
       }
       50% {
         transform: translateX(0vw) translateY(-25px) rotate(180deg);
       }
       100% {
-        transform: translateX(-23.4375vw) translateY(0px) rotate(0deg);
+        transform: translateX(-23.5vw) translateY(0px) rotate(0deg);
       }
     }
 
