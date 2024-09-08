@@ -250,11 +250,11 @@ function fixedScroll() {
   if (scrollPosition >= documentHeight - 75) {
     if (basketElement !== null) basketElement.classList.add("fixed-bottom");
     if (basketImg !== null) basketImg.classList.add("fixed-bottom");
-    if (basket !== null && !baskedOpen) basket.classList.add("fixed-basket");
+    if (basket !== null && window.innerWidth > 900) basket.classList.add("fixed-basket");
   } else {
     if (basketElement !== null) basketElement.classList.remove("fixed-bottom");
     if (basketImg !== null) basketImg.classList.remove("fixed-bottom");
-    if (basket !== null && !baskedOpen) basket.classList.remove("fixed-basket");
+    if (basket !== null && window.innerWidth > 900) basket.classList.remove("fixed-basket");
   }
 }
 
