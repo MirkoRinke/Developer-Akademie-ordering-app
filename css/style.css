@@ -49,6 +49,22 @@
   bottom: 85px !important;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 320px);
+  z-index: 1000;
+  margin: 0px !important;
+  border: 2px solid rgb(255, 127, 0);
+  border-radius: 0px 0px 10px 10px;
+}
+@media (max-width: 900px) {
+  .sticky {
+    width: 100%;
+  }
+}
+
 svg {
   -webkit-user-select: none;
      -moz-user-select: none;

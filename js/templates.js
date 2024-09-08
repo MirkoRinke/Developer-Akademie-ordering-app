@@ -91,7 +91,7 @@ function getContainerHeadTemplate(menuDishes) {
       </svg>
         </div>
       </div>
-      <nav class="main_container--content--order_area--nav">
+      <nav id="main_container--content--order_area--nav" class="main_container--content--order_area--nav">
         <div class="main_container--content--order_area--nav--menu_dishes">
           ${menuDishes}
         </div>

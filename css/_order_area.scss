@@ -1,7 +1,6 @@
 &--order_area {
   min-height: calc(100vh - ($navHeight + $footerHeight));
   width: calc(100% - $basketWidth);
-
   margin-bottom: 50px;
 
   @media (max-width: $breakpoint-md) {

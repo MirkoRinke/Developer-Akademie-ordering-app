@@ -309,3 +309,15 @@ function updateWidth() {
 window.addEventListener("resize", updateWidth); // https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event
 
 updateWidth();
+
+window.addEventListener("scroll", function () {
+  const stickyTrigger = document.getElementById("dishes0");
+  const menu = document.getElementById("main_container--content--order_area--nav");
+  const menuOffset = stickyTrigger.offsetTop - 200; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
+  if (window.scrollY > menuOffset) {
+    // https://www.w3schools.com/jsref/prop_win_scrolly.asp
+    menu.classList.add("sticky");
+  } else {
+    menu.classList.remove("sticky");
+  }
+});
