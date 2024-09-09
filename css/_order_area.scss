@@ -197,17 +197,3 @@
     }
   }
 }
-
-.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: calc(100% - $basketWidth);
-  z-index: 1000;
-  margin: 0px;
-  background-color: $mainColor;
-
-  @media (max-width: $breakpoint-md) {
-    width: 100%;
-  }
-}
