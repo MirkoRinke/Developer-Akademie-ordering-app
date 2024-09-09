@@ -18,6 +18,7 @@
 /** 600px oder schmaler */
 /** 450px oder schmaler */
 /** 300px oder schmaler */
+/** 1921px oder mehr */
 /** 1200px oder schmaler */
 /** 900px oder schmaler */
 /** 600px oder schmaler */
@@ -73,10 +74,15 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 320px);
   z-index: 1000;
   margin: 0px !important;
   background-color: rgb(255, 127, 0);
+}
+@media (min-width: 1921px) {
+  .sticky {
+    width: 100%;
+  }
 }
 @media (max-width: 900px) {
   .sticky {

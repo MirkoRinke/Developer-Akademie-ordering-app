@@ -15,6 +15,8 @@ $basketWidth: 320px;
 
 /* @media breakpoints */
 
+$breakpoint-xl: 1921px !default;
+
 /** 1200px oder schmaler */
 $breakpoint-lg: 1200px !default;
 
@@ -29,6 +31,10 @@ $breakpoint-xs: 450px !default;
 
 /** 300px oder schmaler */
 $breakpoint-xxs: 300px !default;
+
+/** 1921px oder mehr */
+// @media (min-width: $breakpoint-xl) {
+// }
 
 /** 1200px oder schmaler */
 // @media (max-width: $breakpoint-lg) {
