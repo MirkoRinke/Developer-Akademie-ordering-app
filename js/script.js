@@ -75,6 +75,7 @@ function init() {
   checkDelivery();
   renderBasketButton();
   fixedScroll();
+  autoEasterEgg();
 }
 
 init();
@@ -227,7 +228,6 @@ function toggleBasket() {
   let orderArea = document.getElementById("order_area");
   let basketButton = document.getElementById("basketButton");
   let basketClose = document.getElementById("basketClose");
-
   basketRef.classList.toggle("d_block");
   orderArea.classList.toggle("d_none");
   basketButton.classList.toggle("d_none");
@@ -281,6 +281,7 @@ function saveToLocalStorage() {
   }
   localStorage.setItem("currentBasketValue", JSON.stringify(currentBasketValue));
   localStorage.setItem("delivery", JSON.stringify(delivery));
+  localStorage.setItem("easterEgg", JSON.stringify(easterEgg));
 }
 
 function getFromLocalStorage() {
@@ -298,9 +299,10 @@ function getFromLocalStorage() {
   }
 
   const deliveryStorage = JSON.parse(localStorage.getItem("delivery"));
-  if (deliveryStorage !== null) {
-    delivery = JSON.parse(deliveryStorage);
-  }
+  if (deliveryStorage !== null) delivery = JSON.parse(deliveryStorage);
+
+  const easterEggStorage = JSON.parse(localStorage.getItem("easterEgg"));
+  if (easterEggStorage !== null) easterEgg = JSON.parse(easterEggStorage);
 }
 
 function updateWidth() {
