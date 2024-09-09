@@ -165,9 +165,10 @@ a {
   }
 }
 .main_container--content--order_area--restaurant_info--heading {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .main_container--content--order_area--restaurant_info--rating {
+  margin-top: 10px;
   color: rgb(255, 127, 0);
 }
 .main_container--content--order_area--restaurant_info--rating--stars {

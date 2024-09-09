@@ -53,6 +53,9 @@ function getContainerHeadTemplate(menuDishes) {
       </div>
       <div class="main_container--content--order_area--restaurant_info">
         <h1 class="main_container--content--order_area--restaurant_info--heading">The Spicy Dragon</h1>
+        <p class="main_container--content--order_area--restaurant_info--opening_times">Öffnungszeiten</p>
+        <p class="main_container--content--order_area--restaurant_info--opening_times">Mo-Do 10:00 - 23:00</p>
+        <p class="main_container--content--order_area--restaurant_info--opening_times">Fr-So 10:00 - 00:00</p>
         <div class="main_container--content--order_area--restaurant_info--rating">
       <svg
         class="main_container--content--order_area--restaurant_info--rating--stars" 
