@@ -9,7 +9,7 @@
 }
 
 .main_container {
-  min-height: 100vh;
+  min-height: calc(100vh - ($navHeight + $footerHeight));
   max-width: 1920px;
   width: 100%;
 
