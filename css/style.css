@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 100 900;
+}
 /* Colors */
 /* Variables */
 /* @media breakpoints */
@@ -11,18 +23,6 @@
 /** 600px oder schmaler */
 /** 450px oder schmaler */
 /** 300px oder schmaler */
-@font-face {
-  font-family: "Figtree";
-  src: url("../assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 100 900;
-}
-@font-face {
-  font-family: "Figtree";
-  src: url("../assets/fonts/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 100 900;
-}
 * {
   margin: 0px;
   padding: 0px;
