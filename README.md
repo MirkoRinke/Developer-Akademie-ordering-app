@@ -17,9 +17,6 @@ Welcome to my eighth project as part of the Developer Academy! This time, I crea
 - HTML
 - CSS / SCSS
 - JS
-- Flexbox
-- Grid
-
 
 
 ## ⚙️ How to Use
