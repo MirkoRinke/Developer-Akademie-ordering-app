@@ -235,6 +235,7 @@ function toggleBasket() {
   basketClose.classList.toggle("d_block");
   if (!baskedOpen) renderBasketButton();
   dishesSticky();
+  fixedScroll();
 }
 
 function hideBasketButton() {
