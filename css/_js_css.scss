@@ -6,6 +6,14 @@
   height: calc(100vh - $footerHeight) !important;
 }
 
+.fixed-dishesBasket {
+  max-height: calc(100% - (($navHeight + $footerHeight) + (275px))) !important;
+
+  @media (max-width: $breakpoint-md) {
+    max-height: calc(100% - (($navHeight + $footerHeight) + (300px))) !important;
+  }
+}
+
 .sticky {
   position: fixed;
   top: 0;

@@ -201,7 +201,8 @@ function deliveryCostsValue() {
 }
 
 function calculateBasketOverallPrice() {
-  const price = document.querySelectorAll(".main_container--content--basket--dishes--info--data--price--value");
+  const price = document.querySelectorAll(".main_container--content--basket--dishes_container--dishes--info--data--price--value");
+
   const basketSummaryRef = document.getElementById("basket_summary");
   let overallPrice = 0;
   let subtotal = 0;
@@ -243,18 +244,18 @@ function hideBasketButton() {
 
 function fixedScroll() {
   let basketElement = document.getElementById("basketButton");
-  let basketImg = document.getElementById("main_container--content--basket--order_info--img");
   let basket = document.getElementById("basket");
+  let basketDishes = document.getElementById("basket_dishes");
   let scrollPosition = window.innerHeight + window.scrollY;
   let documentHeight = document.documentElement.scrollHeight;
   if (scrollPosition >= documentHeight - 75) {
     if (basketElement !== null) basketElement.classList.add("fixed-bottom");
-    if (basketImg !== null) basketImg.classList.add("fixed-bottom");
     if (basket !== null && window.innerWidth > 900) basket.classList.add("fixed-basket");
+    if (basketDishes !== null) basketDishes.classList.add("fixed-dishesBasket");
   } else {
     if (basketElement !== null) basketElement.classList.remove("fixed-bottom");
-    if (basketImg !== null) basketImg.classList.remove("fixed-bottom");
     if (basket !== null && window.innerWidth > 900) basket.classList.remove("fixed-basket");
+    if (basketDishes !== null) basketDishes.classList.remove("fixed-dishesBasket");
   }
 }
 

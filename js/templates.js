@@ -149,36 +149,36 @@ function renderFooterTemplate() {
 
 function renderBasketHeader() {
   return /*html*/ `
-  <h1 class="main_container--content--basket--heading">Warenkorb</h1>
+  <h1 class="main_container--content--basket--header_container--heading">Warenkorb</h1>
   <svg
     onclick="toggleBasket()"
-    class="main_container--content--basket--close_button"
+    class="main_container--content--basket--header_container--close_button"
     id="basketClose" 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 -960 960 960">
     <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
   </svg>
-  <div class="main_container--content--basket--switch_delivery">
-  <button onclick="switchToDelivery()" id="delivery_button" class="main_container--content--basket--switch_delivery--button">
+  <div class="main_container--content--basket--header_container--switch_delivery">
+  <button onclick="switchToDelivery()" id="delivery_button" class="main_container--content--basket--header_container--switch_delivery--button">
   <svg     
-    class="main_container--content--basket--switch_delivery--button--icon"
+    class="main_container--content--basket--header_container--switch_delivery--button--icon"
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 -960 960 960">
     <path d="M200-80q-83 0-141.5-58.5T0-280q0-83 58.5-141.5T200-480q83 0 141.5 58.5T400-280q0 83-58.5 141.5T200-80Zm0-80q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm240-40v-200L312-512q-12-11-18-25.5t-6-30.5q0-16 6.5-30.5T312-624l112-112q12-12 27.5-18t32.5-6q17 0 32.5 6t27.5 18l76 76q28 28 64 44t76 16v80q-57 0-108.5-22T560-604l-32-32-96 96 88 92v248h-80Zm180-540q-33 0-56.5-23.5T540-820q0-33 23.5-56.5T620-900q33 0 56.5 23.5T700-820q0 33-23.5 56.5T620-740ZM760-80q-83 0-141.5-58.5T560-280q0-83 58.5-141.5T760-480q83 0 141.5 58.5T960-280q0 83-58.5 141.5T760-80Zm0-80q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
   </svg>
-  <div class="main_container--content--basket--switch_delivery--button--info">
+  <div class="main_container--content--basket--header_container--switch_delivery--button--info">
     <p>Lieferung</p>
     <p>15-40min</p>
   </div>
   </button>
-  <button onclick="switchToPickup()" id="pickup_button" class="main_container--content--basket--switch_delivery--button">
+  <button onclick="switchToPickup()" id="pickup_button" class="main_container--content--basket--header_container--switch_delivery--button">
   <svg 
-    class="main_container--content--basket--switch_delivery--button--icon"
+    class="main_container--content--basket--header_container--switch_delivery--button--icon"
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 -960 960 960">
     <path d="M400-80v-280h-80v-240q0-33 23.5-56.5T400-680h160q33 0 56.5 23.5T640-600v240h-80v280H400Zm80-640q-33 0-56.5-23.5T400-800q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800q0 33-23.5 56.5T480-720Z"/>
   </svg>
-  <div class="main_container--content--basket--switch_delivery--button--info">
+  <div class="main_container--content--basket--header_container--switch_delivery--button--info">
     <p>Abholung</p>
     <p>15min</p>
   </div>
@@ -189,33 +189,23 @@ function renderBasketHeader() {
 
 function basketPreOrderTemplate() {
   return /*html*/ `
-    <div class="main_container--content--basket--order_info">
-      <h1 class="main_container--content--basket--order_info--heading">Wähle dein Festmahl</h1>
-      <p class="main_container--content--basket--order_info--textarea">Stöbere durch unsere Speisekarte, stelle dein Menü zusammen und genieße deine Mahlzeit.</p>
-    </div>
-  `;
-}
-
-function basketOrderedTemplate() {
-  return /*html*/ `
-    <div class="main_container--content--basket--order_info">
-      <h1 class="main_container--content--basket--order_info--heading">Vielen Dank für deine Bestellung!</h1>
-      <p class="main_container--content--basket--order_info--textarea">Dein Essen wird schon bald frisch und heiß zu dir geliefert.</p>
-      <img id="main_container--content--basket--order_info--img" class="main_container--content--basket--order_info--img" src="./assets/img/dragon_basket.png" alt="">
+    <div class="main_container--content--basket--summary_container--order_info">
+      <h1 class="main_container--content--basket--summary_container--order_info--heading">Wähle dein Festmahl</h1>
+      <p class="main_container--content--basket--summary_container--order_info--textarea">Stöbere durch unsere Speisekarte, stelle dein Menü zusammen und genieße deine Mahlzeit.</p>
     </div>
   `;
 }
 
 function renderBasketDishes(index, dishesArray, dishType, currentPrice) {
   return /*html*/ `
-<div class="main_container--content--basket--dishes">
-  <span class="main_container--content--basket--dishes--info">
-    <div class="main_container--content--basket--dishes--info--name">${dishesArray[index].name}</div>
-    <div class="main_container--content--basket--dishes--info--data">
-      <div class="main_container--content--basket--dishes--info--data--value">
+<div class="main_container--content--basket--dishes_container--dishes">
+  <span class="main_container--content--basket--dishes_container--dishes--info">
+    <div class="main_container--content--basket--dishes_container--dishes--info--name">${dishesArray[index].name}</div>
+    <div class="main_container--content--basket--dishes_container--dishes--info--data">
+      <div class="main_container--content--basket--dishes_container--dishes--info--data--value">
         <svg
           onclick="removeFromBasket(${index},'${dishType}')"
-          class="main_container--content--basket--dishes--info--data--value--button"
+          class="main_container--content--basket--dishes_container--dishes--info--data--value--button"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 -960 960 960">
           <path d="M200-440v-80h560v80H200Z" />
@@ -223,18 +213,18 @@ function renderBasketDishes(index, dishesArray, dishType, currentPrice) {
         ${dishesArray[index].basketValue}
         <svg
           onclick="updateBasketValue(${index},'${dishType}')"
-          class="main_container--content--basket--dishes--info--data--value--button"
+          class="main_container--content--basket--dishes_container--dishes--info--data--value--button"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 -960 960 960">
           <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
         </svg>
       </div>
-      <div class="main_container--content--basket--dishes--info--data--price">
-        <span class="main_container--content--basket--dishes--info--data--price--value">${currentPrice}</span>€
+      <div class="main_container--content--basket--dishes_container--dishes--info--data--price">
+        <span class="main_container--content--basket--dishes_container--dishes--info--data--price--value">${currentPrice}</span>€
       </div>
       <svg
         onclick="clearBasket(${index},'${dishType}')"
-        class="main_container--content--basket--dishes--info--data--value--button"
+        class="main_container--content--basket--dishes_container--dishes--info--data--value--button"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 -960 960 960">
         <path
@@ -248,18 +238,18 @@ function renderBasketDishes(index, dishesArray, dishType, currentPrice) {
 
 function renderBasketSummary(subtotal, deliveryCosts, overallPrice) {
   return /*html*/ `
-    <div class="main_container--content--basket--overall_price_container">
-      <div class="main_container--content--basket--overall_price_container--subtotal">
+    <div class="main_container--content--basket--summary_container--overall_price_container">
+      <div class="main_container--content--basket--summary_container--overall_price_container--subtotal">
         <span>Zwischensumme:</span>
         <span>${subtotal}€</span>
       </div>
-      <div class="main_container--content--basket--overall_price_container--delivery_costs">
+      <div class="main_container--content--basket--summary_container--overall_price_container--delivery_costs">
         <span>Lieferkosten:</span>
-        <span class="main_container--content--basket--overall_price_container--delivery_costs--span">
+        <span class="main_container--content--basket--summary_container--overall_price_container--delivery_costs--span">
         <!-- !Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
         <svg 
           id="EasterEggIcon"
-          class="main_container--content--basket--overall_price_container--delivery_costs--span--EasterEgg"
+          class="main_container--content--basket--summary_container--overall_price_container--delivery_costs--span--EasterEgg"
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 512 512">
           <path fill="#cc0000" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
@@ -267,13 +257,23 @@ function renderBasketSummary(subtotal, deliveryCosts, overallPrice) {
           ${deliveryCosts}€
         </span>
       </div>
-      <div class="main_container--content--basket--overall_price_container--overall_price">
+      <div class="main_container--content--basket--summary_container--overall_price_container--overall_price">
         <span>Gesamt:</span> 
         <span>${overallPrice}€</span>
       </div>
-      <button onclick="triggerOrder()" class="main_container--content--basket--overall_price_container--pay_button">Bezahlen: ${overallPrice}€</button>
+      <button onclick="triggerOrder()" class="main_container--content--basket--summary_container--overall_price_container--pay_button">Bezahlen: ${overallPrice}€</button>
     </div>
     
+  `;
+}
+
+function basketOrderedTemplate() {
+  return /*html*/ `
+    <div class="main_container--content--basket--summary_container--order_info">
+      <h1 class="main_container--content--basket--summary_container--order_info--heading">Vielen Dank für deine Bestellung!</h1>
+      <p class="main_container--content--basket--summary_container--order_info--textarea">Dein Essen wird schon bald frisch und heiß zu dir geliefert.</p>
+      <img id="main_container--content--basket--summary_container--order_info--img" class="main_container--content--basket--summary_container--order_info--img" src="./assets/img/dragon_basket.png" alt="">
+    </div>
   `;
 }
 
