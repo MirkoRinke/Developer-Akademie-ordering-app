@@ -57,7 +57,7 @@ function renderDishes(dishType) {
 }
 
 function renderFooter() {
-  let footerRef = document.getElementById("main_container--footer");
+  const footerRef = document.getElementById("main_container--footer");
   footerRef.innerHTML = renderFooterTemplate();
 }
 
@@ -181,13 +181,13 @@ function triggerOrder() {
 function useEasterEgg() {
   easterEgg = true;
   updateBasketContents();
-  let EasterEggIconRef = document.getElementById("EasterEggIcon");
+  const EasterEggIconRef = document.getElementById("EasterEggIcon");
   if (EasterEggIconRef !== null) EasterEggIconRef.classList.add("d_block");
 }
 
 function autoEasterEgg() {
   if (easterEgg) {
-    let EasterEggIconRef = document.getElementById("EasterEggIcon");
+    const EasterEggIconRef = document.getElementById("EasterEggIcon");
     if (EasterEggIconRef !== null) EasterEggIconRef.classList.add("d_block");
   }
 }
@@ -202,7 +202,6 @@ function deliveryCostsValue() {
 
 function calculateBasketOverallPrice() {
   const price = document.querySelectorAll(".main_container--content--basket--dishes_container--dishes--info--data--price--value");
-
   const basketSummaryRef = document.getElementById("basket_summary");
   let overallPrice = 0;
   let subtotal = 0;
@@ -225,10 +224,10 @@ function calculateBasketOverallPrice() {
 
 function toggleBasket() {
   baskedOpen = !baskedOpen;
-  let basketRef = document.getElementById("basket");
-  let orderArea = document.getElementById("order_area");
-  let basketButton = document.getElementById("basketButton");
-  let basketClose = document.getElementById("basketClose");
+  const basketRef = document.getElementById("basket");
+  const orderArea = document.getElementById("order_area");
+  const basketButton = document.getElementById("basketButton");
+  const basketClose = document.getElementById("basketClose");
   basketRef.classList.toggle("d_block");
   orderArea.classList.toggle("d_none");
   basketButton.classList.toggle("d_none");
@@ -239,14 +238,14 @@ function toggleBasket() {
 }
 
 function hideBasketButton() {
-  let basketButton = document.getElementById("basketButton");
+  const basketButton = document.getElementById("basketButton");
   basketButton.classList.toggle("d_none");
 }
 
 function fixedScroll() {
-  let basketElement = document.getElementById("basketButton");
-  let basket = document.getElementById("basket");
-  let basketDishes = document.getElementById("basket_dishes");
+  const basketElement = document.getElementById("basketButton");
+  const basket = document.getElementById("basket");
+  const basketDishes = document.getElementById("basket_dishes");
   let scrollPosition = window.innerHeight + window.scrollY;
   let documentHeight = document.documentElement.scrollHeight;
   if (scrollPosition >= documentHeight - 75) {
@@ -265,7 +264,7 @@ window.addEventListener("scroll", function () {
 });
 
 function renderBasketButton() {
-  let basketButtonContainer = document.getElementById("basket_button_container");
+  const basketButtonContainer = document.getElementById("basket_button_container");
   let overallPrice = calculateBasketOverallPrice();
   basketButtonContainer.innerHTML = renderBasketButtonTemplate(overallPrice);
 }
