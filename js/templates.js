@@ -2,7 +2,7 @@ function getNavTemplate() {
   return /*html*/ `
     <div onclick="window.location.href='./index.html';" class="main_container--nav--logo">
          <svg           
-          class="main_container--nav--logo"  
+          class="main_container--nav--logo"
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 3487.01 1372.4">
           <g>

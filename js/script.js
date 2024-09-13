@@ -49,10 +49,10 @@ function renderDishes(dishType) {
       containerId = "dishes" + index;
     }
   }
-  const container = document.getElementById(containerId);
-  container.innerHTML = "";
+  const containerRef = document.getElementById(containerId);
+  containerRef.innerHTML = "";
   for (let index = 0; index < dishesArray.length; index++) {
-    container.innerHTML += getDishesTemplate(index, dishesArray, dishType);
+    containerRef.innerHTML += getDishesTemplate(index, dishesArray, dishType);
   }
 }
 
@@ -81,36 +81,36 @@ function init() {
 init();
 
 function checkDelivery() {
-  const deliveryButton = document.getElementById("delivery_button");
-  const pickupButton = document.getElementById("pickup_button");
+  const deliveryButtonRef = document.getElementById("delivery_button");
+  const pickupButtonRef = document.getElementById("pickup_button");
   if (delivery) {
-    pickupButton.style.backgroundColor = "rgb(216, 216, 216)";
-    deliveryButton.style.backgroundColor = "white";
+    pickupButtonRef.style.backgroundColor = "rgb(216, 216, 216)";
+    deliveryButtonRef.style.backgroundColor = "white";
   } else {
-    pickupButton.style.backgroundColor = "white";
-    deliveryButton.style.backgroundColor = "rgb(216, 216, 216)";
+    pickupButtonRef.style.backgroundColor = "white";
+    deliveryButtonRef.style.backgroundColor = "rgb(216, 216, 216)";
   }
 }
 
 function switchToDelivery() {
-  const deliveryButton = document.getElementById("delivery_button");
-  const pickupButton = document.getElementById("pickup_button");
+  const deliveryButtonRef = document.getElementById("delivery_button");
+  const pickupButtonRef = document.getElementById("pickup_button");
   if (!delivery) {
     delivery = true;
-    pickupButton.style.backgroundColor = "rgb(216, 216, 216)";
-    deliveryButton.style.backgroundColor = "white";
+    pickupButtonRef.style.backgroundColor = "rgb(216, 216, 216)";
+    deliveryButtonRef.style.backgroundColor = "white";
   }
   updateBasketContents();
   saveToLocalStorage();
 }
 
 function switchToPickup() {
-  const deliveryButton = document.getElementById("delivery_button");
-  const pickupButton = document.getElementById("pickup_button");
+  const deliveryButtonRef = document.getElementById("delivery_button");
+  const pickupButtonRef = document.getElementById("pickup_button");
   if (delivery) {
     delivery = false;
-    deliveryButton.style.backgroundColor = "rgb(216, 216, 216)";
-    pickupButton.style.backgroundColor = "white";
+    deliveryButtonRef.style.backgroundColor = "rgb(216, 216, 216)";
+    pickupButtonRef.style.backgroundColor = "white";
   }
   updateBasketContents();
   saveToLocalStorage();
@@ -201,14 +201,14 @@ function deliveryCostsValue() {
 }
 
 function calculateBasketOverallPrice() {
-  const price = document.querySelectorAll(".main_container--content--basket--dishes_container--dishes--info--data--price--value");
+  const priceRef = document.querySelectorAll(".main_container--content--basket--dishes_container--dishes--info--data--price--value");
   const basketSummaryRef = document.getElementById("basket_summary");
   let overallPrice = 0;
   let subtotal = 0;
   let deliveryCosts = 0;
   if (delivery) deliveryCosts = deliveryCostsValue();
-  for (let index = 0; index < price.length; index++) {
-    const eachPrice = parseFloat(price[index].innerHTML); // https://www.w3schools.com/jsref/jsref_parsefloat.asp
+  for (let index = 0; index < priceRef.length; index++) {
+    const eachPrice = parseFloat(priceRef[index].innerHTML); // https://www.w3schools.com/jsref/jsref_parsefloat.asp
     overallPrice += eachPrice;
   }
   if (overallPrice != "0.00") {
@@ -223,39 +223,39 @@ function calculateBasketOverallPrice() {
 }
 
 function toggleBasket() {
+  fixedScroll();
   baskedOpen = !baskedOpen;
   const basketRef = document.getElementById("basket");
-  const orderArea = document.getElementById("order_area");
-  const basketButton = document.getElementById("basketButton");
-  const basketClose = document.getElementById("basketClose");
+  const orderAreaRef = document.getElementById("order_area");
+  const basketButtonRef = document.getElementById("basketButton");
+  const basketCloseRef = document.getElementById("basketClose");
   basketRef.classList.toggle("d_block");
-  orderArea.classList.toggle("d_none");
-  basketButton.classList.toggle("d_none");
-  basketClose.classList.toggle("d_block");
+  orderAreaRef.classList.toggle("d_none");
+  basketButtonRef.classList.toggle("d_none");
+  basketCloseRef.classList.toggle("d_block");
   if (!baskedOpen) renderBasketButton();
   dishesSticky();
-  fixedScroll();
 }
 
 function hideBasketButton() {
-  const basketButton = document.getElementById("basketButton");
-  basketButton.classList.toggle("d_none");
+  const basketButtonRef = document.getElementById("basketButton");
+  basketButtonRef.classList.toggle("d_none");
 }
 
 function fixedScroll() {
-  const basketElement = document.getElementById("basketButton");
-  const basket = document.getElementById("basket");
-  const basketDishes = document.getElementById("basket_dishes");
+  const basketElementRef = document.getElementById("basketButton");
+  const basketRef = document.getElementById("basket");
+  const basketDishesRef = document.getElementById("basket_dishes");
   let scrollPosition = window.innerHeight + window.scrollY;
   let documentHeight = document.documentElement.scrollHeight;
   if (scrollPosition >= documentHeight - 75) {
-    if (basketElement !== null) basketElement.classList.add("fixed-bottom");
-    if (basket !== null && window.innerWidth > 900) basket.classList.add("fixed-basket");
-    if (basketDishes !== null) basketDishes.classList.add("fixed-dishesBasket");
+    if (basketElementRef !== null) basketElementRef.classList.add("fixed-bottom");
+    if (basketRef !== null && window.innerWidth > 900) basketRef.classList.add("fixed-basket");
+    if (basketDishesRef !== null) basketDishesRef.classList.add("fixed-dishesBasket");
   } else {
-    if (basketElement !== null) basketElement.classList.remove("fixed-bottom");
-    if (basket !== null && window.innerWidth > 900) basket.classList.remove("fixed-basket");
-    if (basketDishes !== null) basketDishes.classList.remove("fixed-dishesBasket");
+    if (basketElementRef !== null) basketElementRef.classList.remove("fixed-bottom");
+    if (basketRef !== null && window.innerWidth > 900) basketRef.classList.remove("fixed-basket");
+    if (basketDishesRef !== null) basketDishesRef.classList.remove("fixed-dishesBasket");
   }
 }
 
@@ -264,9 +264,9 @@ window.addEventListener("scroll", function () {
 });
 
 function renderBasketButton() {
-  const basketButtonContainer = document.getElementById("basket_button_container");
+  const basketButtonContainerRef = document.getElementById("basket_button_container");
   let overallPrice = calculateBasketOverallPrice();
-  basketButtonContainer.innerHTML = renderBasketButtonTemplate(overallPrice);
+  basketButtonContainerRef.innerHTML = renderBasketButtonTemplate(overallPrice);
 }
 
 function saveToLocalStorage() {
@@ -318,14 +318,14 @@ window.addEventListener("resize", updateWidth); // https://developer.mozilla.org
 updateWidth();
 
 function dishesSticky() {
-  const stickyTrigger = document.getElementById("dishes0");
-  const menu = document.getElementById("main_container--content--order_area--nav");
-  const menuOffset = stickyTrigger.offsetTop - 170; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
+  const stickyTriggerRef = document.getElementById("dishes0");
+  const menuRef = document.getElementById("main_container--content--order_area--nav");
+  const menuOffset = stickyTriggerRef.offsetTop - 170; // https://www.w3schools.com/jsref/prop_element_offsettop.asp
   if (window.scrollY > menuOffset) {
     // https://www.w3schools.com/jsref/prop_win_scrolly.asp
-    menu.classList.add("sticky");
+    menuRef.classList.add("sticky");
   } else {
-    menu.classList.remove("sticky");
+    menuRef.classList.remove("sticky");
   }
 }
 
